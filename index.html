@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <!-- Custom Style -->
+    <link rel="stylesheet" href="style.css">
+    <!-- JavaScript Bundle with Popper -->
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
+    <title>Invoice..!</title>
+</head>
+
+<body>
+    
+<form class="m-2 p-3 border border-success">
+
+    Patient Name: <input type="text" id="name" class="form-control" required  placeholder="Give The Patient Name"/>
+ 
+    Patient Age: <input type="number" id="age" class="form-control " required  placeholder="Give The Patient Age"/>
+    
+    Patient Sex: <input type="text" id="sex" class="form-control " required  placeholder="Give The patient sex"/>
+    
+    Date Of Vist: <input type="date" id="date" class="form-control " required  placeholder="Give The Vist Date"/>
+
+<div>
+    <input type="button" value="Submit" onclick="fillForm();" class="btn btn-success">
+</div>
+
+</form> 
+
+    <div class="my-5 page" size="A4">
+        <div class="p-5">
+            <section class="top-content bb d-flex justify-content-between">
+                <div class="logo">
+                    <h1 class="Docname">Dr.Hasan Khalid</h1>
+                    <h1 class="Docdesig">MBBS, FCPS, FRCS</h1>
+                    <h1 class="Docdesig">Medicine Specealist </h1>
+                </div>
+                <div class="top-left">
+            </section>
+            <section>
+            <section  id="patient">
+                            <div id="patientname"></div>
+                            <div id="patientage"></div>
+                            <div id="patientsex"></div>
+                            <div id="patientdate"></div>
+            </section>
+            </section>
+            <script>
+                function fillForm(){
+                    var pbox = document.getElementById('patientname');
+                    var name = document.getElementById('name');
+                    var abox = document.getElementById('patientage')
+                    var age = document.getElementById('age')
+                    var sbox = document.getElementById('patientsex')
+                    var sex = document.getElementById('sex')
+                    var dbox = document.getElementById('patientdate')
+                    var date = document.getElementById('date')
+                patientname.innerHTML = "Name: "+name.value; 
+                patientage.innerHTML = "Age: "+age.value; 
+                patientsex.innerHTML = "Sex: "+sex.value; 
+                patientdate.innerHTML = "Date of visit: "+date.value;
+                }
+                </script>
+           <div id="main"></div>
+            
+            <footer class="foot">
+                <div class="social pt-3">
+                    <span class="pr-2">
+                        <i class="fas fa-mobile-alt"></i>
+                        <span>0123456789</span>
+                    </span>
+                    <span class="pr-2">
+                        <i class="fas fa-envelope"></i>
+                        <span>me@saburali.com</span>
+                    </span>
+                    <span class="pr-2">
+                        <i class="fab fa-facebook-f"></i>
+                        <span>/sabur.7264</span>
+                    </span>
+                    <span class="pr-2">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>/01711640973</span>
+                    </span>
+                    <span class="pr-2">
+                        <i class="fab fa-github"></i>
+                        <span>/example</span>
+                    </span>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+
+</body></html>
+
