@@ -82,3 +82,24 @@ function generatePDF(){
     .form(element)
     .save();
 }
+
+function newDigno() {
+    var li = document.createElement("li");
+    var inputValue = document.getElementById("dignosis").value;
+    var t = document.createTextNode(inputValue);
+    li.appendChild(t);
+    if (inputValue === '') {
+    alert("You must write something!");
+    } else {
+    document.getElementById("patientdignosis").appendChild(li);
+    }
+    document.getElementById("dignosis").value = "";
+    
+    
+    for (i = 0; i < close.length; i++) {
+    close[i].onclick = function() {
+    var div = this.parentElement;
+    div.style.display = "none";
+    }
+    }
+    }
