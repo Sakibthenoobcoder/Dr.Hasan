@@ -12,7 +12,7 @@ function fillForm(){
     var mbox = document.getElementById('patientmedicine')
     var medicine = document.getElementById('Medicine')
     var dgbox = document.getElementById('patientdignosis')
-    var dignosis = document.getElementById('dignosis')
+
     var tbox = document.getElementById('patienttest')
     var test = document.getElementById('test')
 
@@ -22,7 +22,7 @@ patientsex.innerHTML = "Sex: "+sex.value;
 patientdate.innerHTML = "Date of visit: "+date.value;
 patientdisease.innerHTML = "Chief Complaint :  " + "   "+ disease.value;
 patientmedicine.innerHTML = Medicine.value;
-patientdignosis.innerHTML = " Dignosis : "+dignosis.value;
+
 patienttest.innerHTML = test.value;
 }
 
@@ -75,13 +75,6 @@ div.style.display = "none";
 }
 }
 }
-function generatePDF(){
-    var element = document.getElementsById("pages");
-
-    html2pdf()
-    .form(element)
-    .save();
-}
 
 function newDigno() {
     var li = document.createElement("li");
@@ -103,3 +96,6 @@ function newDigno() {
     }
     }
     }
+
+
+    

@@ -4,29 +4,17 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <link rel="shortcut icon" href="image/favicon.ico" type="image/x-icon">
-    <!-- CSS only -->
-    
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-    <!-- Custom Style -->
-    <link rel="stylesheet" href="style.css">
-    <!-- JavaScript Bundle with Popper -->
-   
-
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.2/pdfmake.min.js"></script>
-
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.2/vfs_fonts.js"></script>
-
-
-   
-   <script src="script.js"></script>
-
-<script src="/js/app.js"></script>
-<script src="/js/bootstrap.bundle.min.js"></script>
-<script src="/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="/css/bootstrap.min.css">
+    <script src="/js/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css"> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.3/jspdf.min.js"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
 
     <title>Dr.Hasan Khalid Prescription</title>
 </head>
@@ -36,13 +24,9 @@
 <form class="m-2 p-3 border border-success">
 
     Patient Name: <input type="text" id="name" class="form-control" required  placeholder="Give The Patient Name"/>
- 
     Patient Age: <input type="number" id="age" class="form-control " required  placeholder="Give The Patient Age"/>
-    
     Patient Sex: <input type="text" id="sex" class="form-control " required  placeholder="Give The patient sex"/>
-    
     Date Of Vist: <input type="date" id="date" class="form-control " required  placeholder="Give The Vist Date"/>
-
     Cheif Complaints: <textarea name="" id="disease" cols="10" rows="10" class="form-control" placeholder="Give The Cheif Complain"></textarea>
     <div>
         <input type="button" value="Submit" onclick="fillForm();" class="btn btn-success" id="butt">
@@ -51,11 +35,9 @@
     <div>
         <input type="button" value="Submit Dignosis" onclick="newDigno();" class="btn btn-success" id="butt">
     </div>
- 
     <div>
       Rx Medicine: <textarea name="" style="height: 20px;" id="Medicine" cols="30" rows="10" class="form-control" placeholder="Give The Meidicne"></textarea>
     </div>
-
     <div>
       <select class="form-select" aria-label="Default select example" id="time">
         <option value="">  রাতে খাবার আগে</option>
@@ -68,7 +50,6 @@
         <option value="">  তিন বেলা খাবার পরে</option>
       </select>
     </div>
-
     <div>
         <select class="form-select" aria-label="Default select example" id="duration">
           <option value="">  ১ দিন</option>
@@ -83,13 +64,12 @@
         </select>
       </div>
 <input type="button" value="Add Medicine" onclick="newElement();" class="btn btn-success" id="butt">
-    
 </div>
 <div>
     Test: <textarea name="" style="height: 20px;" id="test" cols="30" rows="10" class="form-control" placeholder="Give The Test"></textarea>
 </div>
     <input type="button" value="Add Test" onclick="newTest();" class="btn btn-success" id="butt">
-    <input type="button" value="PDF Download" onclick="generatePDF();" class="btn btn-success" id="butt">
+    <input type="button" value="PDF Download" onclick="getPDF();" class="btn btn-success" id="butt">
 
 </form> 
 
@@ -113,45 +93,83 @@
             </section>
            
      
-     <div id="main">
-         <h6 id="dif">Dignosis:</h6>
+    <div><i class="fas fa-prescription"></i></div>
+         <h6 id="dif">Dignosis:</h6> 
          <h6 id="patientdignosis"></h6>
-        <h6 id="patientdisease"></h6>
+         
+         <h6 id="patientdisease"></h6>
+        
     
             
-               <i class="fas fa-prescription"></i> 
+               
                 <h6> <ol id="patientmedicine">
                 </ol></h6>
                 <h6></h6>
                 <h6 id="tests">Test Names:</h6>
                 <h6 id="patienttest"></h6>
-    </div>
 
-    <h3 id="bangla">** পরবর্তী ..... মাস পর পুনরায় আসবেন</h3>
-            <footer>
-                <div class="social pt-3">
-                    <span class="pr-2">
-                        <i class="fas fa-mobile-alt" id="mobile"></i>
-                        <span>01xxxxxxxxx</span>
-                    </span>
-                    <span class="pr-2">
-                        <i class="fas fa-envelope" id="enve"></i>
-                        <span>Sakibriad@gmail.com</span>
-                    </span>
-                    <span class="pr-2">
-                        <i class="fab fa-whatsapp"></i>
-                        <span>/lorem ipsum</span>
+                <div>
+                <h3 id="bangla">** পরবর্তী ..... মাস পর পুনরায় আসবেন</h3></div>
+                <footer>
+                    <div class="social pt-3">
+                        <span class="pr-2">
+                            <span class="sa">Mobile No: 01xxxxxxxxx</span>
+                        </span>
+                        <span class="pr-2">
+                     
+                            <span>Email: Sakibriad@gmail.com</span>
+                        </span>
+                        <span class="pr-2">
+                           
+                            <span>Whattsapp: lorem ipsum</span>
+                    </div>
+                    <div id="address">
+                        Address: Lorem ipsum dolor sit amet consectetur adipisicing elit. Et tempora magnam velit 
+                    </div>
+                </footer>
+                <div id="fo0ot">
+    
                 </div>
-                <div id="address">
-                    Address: Lorem ipsum dolor sit amet consectetur adipisicing elit. Et tempora magnam velit 
-                </div>
-            </footer>
-            <div id="fo0ot">
-
             </div>
         </div>
     </div>
 
+   
+    <script type="text/javascript">
+        function getPDF(){
+        
+        var HTML_Width = $(".page").width();
+        var HTML_Height = $(".page").height();
+        var top_left_margin = 10;
+        var top_margin = 19;
+        var PDF_Width = HTML_Width+(top_left_margin*2);
+        var PDF_Height = (PDF_Width*1.5)+(top_left_margin*2)+(top_margin*1);
+        var canvas_image_width = HTML_Width;
+        var canvas_image_height = HTML_Height;
+        
+        var totalPDFPages = Math.ceil(HTML_Height/PDF_Height)-1;
+        
+        
+        html2canvas($(".page")[0],{allowTaint:true}).then(function(canvas) {
+          canvas.getContext('2d');
+          
+          console.log(canvas.height+"  "+canvas.width);
+          
+          
+          var imgData = canvas.toDataURL("image/jpeg", 1.0);
+          var pdf = new jsPDF('p', 'pt',  [PDF_Width, PDF_Height]);
+            pdf.addImage(imgData, 'JPG', top_left_margin, top_left_margin,canvas_image_width,canvas_image_height);
+          
+          
+          for (var i = 1; i <= totalPDFPages; i++) { 
+            pdf.addPage(PDF_Width, PDF_Height);
+            pdf.addImage(imgData, 'JPG', top_left_margin, -(PDF_Height*i)+(top_left_margin*10),canvas_image_width,canvas_image_height);
+          }
+          
+            pdf.save("Dr, Sayeef Khalid Patient Database.pdf");
+            });
+        };
+        </script>
 
 </body></html>
 
