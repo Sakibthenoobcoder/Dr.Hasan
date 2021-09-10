@@ -60,6 +60,7 @@ var li = document.createElement("li");
 var inputValue = document.getElementById("test").value;
 var t = document.createTextNode(inputValue);
 li.appendChild(t);
+console.log(li.appendChild(t));
 if (inputValue === '') {
 alert("You must write something!");
 } else {
